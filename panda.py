@@ -40,13 +40,12 @@ class Panda(object):
         self.tft.ellipse(101, 78, 8, 4, color=self.tft.WHITE, fillcolor=self.tft.WHITE)
         self.tft.ellipse(139, 78, 8, 4, color=self.tft.WHITE, fillcolor=self.tft.WHITE)
 
-
     # draw panda's hands
     def draw_legs(self):
         self.tft.ellipse(110, 95, 6, 7, color=self.tft.WHITE, fillcolor=self.tft.WHITE)
         self.tft.ellipse(130, 95, 6, 7, color=self.tft.WHITE, fillcolor=self.tft.WHITE)
 
-
+    # move panda's eyes from right to left
     def move_eyes(self):
         self.tft.circle(112, 58, 6, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
         self.tft.circle(128, 58, 6, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
@@ -67,14 +66,14 @@ class Panda(object):
     def remove_panda(self):
         self.tft.rect(90, 35, 60, 70, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
 
-
+    # remove the sleeping padna
     def remove_sleeping_panda(self):
         self.tft.rect(70, 71, 110, 30, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
         self.tft.text(140, 40, "Z", color=self.tft.BLACK)
         self.tft.text(146, 45, "Z", color=self.tft.BLACK)
         self.tft.text(152, 50, "Z", color=self.tft.BLACK)
 
-
+    # draw the panda sleeping
     def draw_sleeping_panda(self):
         print("Sleeping panda")
         # body

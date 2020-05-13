@@ -83,6 +83,7 @@ class Game(object):
             self.sleep_segments += 1
             print("Remaining: ", self.sleep_segments)
 
+    # check if the game is over
     def game_over(self):
         if self.hungry_segments >= 0 and self.sleep_segments >=0:
             return False
@@ -92,12 +93,14 @@ class Game(object):
             self.tft.text(75, 65, "GAME OVER")
             return True
 
+    # remove one segment from the hungry bar
     def remove_hungry_segment(self):
         print("Remove hungry: ", self.hungry_segments)
         self.hungry_segments -= 1
         self.tft.roundrect(192 + (self.hungry_segments * 14), 37, 13, 4, 1, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
         print("Remaining: ", self.hungry_segments)
 
+    # remove one segment from the sleep bar
     def remove_sleep_segment(self):
         print("Remove sleep: ", self.sleep_segments)
         self.sleep_segments -= 1

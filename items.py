@@ -25,6 +25,7 @@ class Items(object):
         self.tft.circle(215, 13, 9, color=self.tft.CYAN, fillcolor=self.tft.CYAN)
         self.tft.circle(227, 13, 7, color=self.tft.CYAN, fillcolor=self.tft.CYAN)
 
+    # draw the rain
     def rain(self, x, y, rain_color):
         for i in range(5, 236, 20):
             for j in range(x, 121, 25):
@@ -35,6 +36,7 @@ class Items(object):
                 if (not (i in range(92, 150) and j in range(38, 102))) and (not (i in range(190, 240) and j in range(30, 58))):
                     self.tft.line(i, j, i, j + 4, color=rain_color)
 
+    # make the raindrops to move
     def make_it_rain(self):
         for i in range(3):
             self.rain(25, 35, self.tft.DARKCYAN)
@@ -50,7 +52,6 @@ class Items(object):
             self.rain(35, 45, self.tft.BLACK)
             sleep_ms(100)
 
-    # draw bamboo
     def draw_bamboo(self):
         self.tft.roundrect(50, 46, 7, 4, 1, color=self.tft.GREEN, fillcolor=self.tft.GREEN)
         self.tft.roundrect(50, 50, 7, 10, 2, color=self.tft.GREEN, fillcolor=self.tft.GREEN)

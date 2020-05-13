@@ -28,6 +28,7 @@ while True:
         sleep_ms(tdiff)
     last_time = ticks_ms()
 
+    # check if the game is over
     if game.game_over():
         sleep_ms(10000)
         break
@@ -42,18 +43,19 @@ while True:
         hungry_time = ticks_ms()
 
     # drop one hungry bar every 10 seconds
-    if ticks_diff(ticks_ms(), hungry_time) > 20000:
+    if ticks_diff(ticks_ms(), hungry_time) > 10000:
         print(ticks_diff(ticks_ms(), hungry_time))
         game.remove_hungry_segment()
         hungry_time = ticks_ms()
 
     # drop one sleep bar every 10 seconds
-    if ticks_diff(ticks_ms(), sleep_time) > 10000:
+    if ticks_diff(ticks_ms(), sleep_time) > 15000:
         print(ticks_diff(ticks_ms(), sleep_time))
         game.remove_sleep_segment()
         sleep_time = ticks_ms()
 
-    if ticks_diff(ticks_ms(), make_rain) > 10000:
+    # make it rain
+    if ticks_diff(ticks_ms(), make_rain) > 25000:
         print("Randomly it starts raining")
         game.get_items().make_it_rain()
         make_rain = ticks_ms()
