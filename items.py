@@ -1,11 +1,10 @@
-from time import ticks_diff, ticks_ms, sleep_ms
+from time import sleep_ms
 
 
 class Items(object):
     def __init__(self, tft):
         self.tft = tft
         self.draw_clouds()
-        self.draw_life_bars()
 
 
     # draw clouds
@@ -30,20 +29,6 @@ class Items(object):
         self.tft.circle(227, 13, 7, color=self.tft.CYAN, fillcolor=self.tft.CYAN)
 
 
-    def draw_life_bars(self):
-        self.tft.roundrect(190, 35, 45, 8, 2, color=self.tft.GREENYELLOW)
-        # segments
-        self.tft.roundrect(192, 37, 13, 4, 1, color=self.tft.GREENYELLOW, fillcolor=self.tft.GREENYELLOW)
-        self.tft.roundrect(206, 37, 13, 4, 1, color=self.tft.GREENYELLOW, fillcolor=self.tft.GREENYELLOW)
-        self.tft.roundrect(220, 37, 13, 4, 1, color=self.tft.GREENYELLOW, fillcolor=self.tft.GREENYELLOW)
-
-        self.tft.roundrect(190, 50, 45, 8, 2, color=self.tft.GREENYELLOW)
-        # segments
-        self.tft.roundrect(192, 52, 13, 4, 1, color=self.tft.GREENYELLOW, fillcolor=self.tft.GREENYELLOW)
-        self.tft.roundrect(206, 52, 13, 4, 1, color=self.tft.GREENYELLOW, fillcolor=self.tft.GREENYELLOW)
-        self.tft.roundrect(220, 52, 13, 4, 1, color=self.tft.GREENYELLOW, fillcolor=self.tft.GREENYELLOW)
-
-
     def rain(self, x, y, rain_color):
         for i in range(5, 236, 20):
             for j in range(x, 121, 25):
@@ -59,7 +44,7 @@ class Items(object):
 
 
     def make_it_rain(self):
-        for i in range(10):
+        for i in range(5):
             self.rain(25, 35, self.tft.DARKCYAN)
             sleep_ms(500)
             self.rain(25, 35, self.tft.BLACK)
