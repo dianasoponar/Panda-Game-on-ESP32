@@ -1,6 +1,3 @@
-import machine, display
-
-
 class Panda(object):
     def __init__(self, tft):
         self.eyes_position = "right"
@@ -65,3 +62,30 @@ class Panda(object):
             self.tft.circle(130, 58, 2, color=self.tft.DARKGREEN, fillcolor=self.tft.DARKGREEN)
             # set eyes_position
             self.eyes_position = "right"
+
+
+    def remove_panda(self):
+        self.tft.rect(90, 35, 60, 70, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
+
+
+    def remove_sleeping_panda(self):
+        self.tft.rect(70, 71, 110, 30, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
+        self.tft.text(140, 40, "Z", color=self.tft.BLACK)
+        self.tft.text(146, 45, "Z", color=self.tft.BLACK)
+        self.tft.text(152, 50, "Z", color=self.tft.BLACK)
+
+
+    def draw_sleeping_panda(self):
+        print("Sleeping panda")
+        # body
+        self.tft.ellipse(110, 100, 38, 27, opt=3, color=self.tft.WHITE, fillcolor=self.tft.WHITE)
+        # head
+        self.tft.ellipse(160, 100, 17, 17, opt=3, color=self.tft.WHITE, fillcolor=self.tft.WHITE)
+        # eyes
+        self.tft.ellipse(162, 95, 4, 4, opt=3, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
+        # legs
+        self.tft.ellipse(85, 100, 12, 10, opt=3, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
+        self.tft.ellipse(135, 100, 12, 10, opt=3, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
+        # ears
+        self.tft.circle(160, 81, 6, color=self.tft.WHITE, fillcolor=self.tft.WHITE)
+        self.tft.circle(160, 81, 4, color=self.tft.BLACK, fillcolor=self.tft.BLACK)
