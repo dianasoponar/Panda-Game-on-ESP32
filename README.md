@@ -25,4 +25,4 @@ Another challenge was to give the impression that the raindrops are moving.
 I solve this problem by deleting the first set of rain and redrawing them a
 couple of centimeters down.
 
-![](panda_game.png)
+See video [here](https://www.youtube.com/watch?v=8NU83tFDy1k).
